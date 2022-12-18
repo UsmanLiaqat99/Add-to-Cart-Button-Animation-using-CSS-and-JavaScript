@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-button {
+    position: relative;
+    width: 240px;
+    height: 60px;
+    border-radius: 8px;
+    color: #fff;
+    background: #006995;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.cart-button:active {
+    transform: scale(.9);
+}
+
+.cart-button .fa-shopping-cart {
+    position: absolute;
+    top: 50%;
+    left: -10%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    font-size: 2rem;
+}
+
+.cart-button .fa-box {
+    position: absolute;
+    top: -20%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    font-size: 1.2rem;
+}
+
+.cart-button .add-to-cart,
+.cart-button .added {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font: 700 18px 'Open Sans';
+}
+
+.cart-button .added {
+    opacity: 0;
+}
+
+.cart-button.clicked .fa-shopping-cart {
+    animation: cart 1.5s ease-in-out forwards;
+}
+
+.cart-button.clicked .fa-box {
+    animation: box 1.5s ease-in-out forwards;
+}
+
+.cart-button.clicked .add-to-cart {
+    animation: text1 1.5s ease-in-out forwards;
+}
+
+.cart-button.clicked .added {
+    animation: text2 1.5s ease-in-out forwards;
+}
+
+@keyframes cart {
+    0% {
+        left: -10%;
+    }
+
+    40%, 60% {
+        left: 50%;
+    }
+
+    100% {
+        left: 110%;
+    }
+}
+
+@keyframes box {
+    0%, 40% {
+        top: -20%;
+    }
+
+    60% {
+        top: 40%;
+        left: 52%;
+    }
+
+    100% {
+        top: 40%;
+        left: 112%;
+    }
+}
+
+@keyframes text1 {
+    0% {
+        opacity: 1;
+    }
+
+    20%, 100% {
+        opacity: 0;
+    }
+}
+
+@keyframes text2 {
+    0%, 80% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
